@@ -1,221 +1,181 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar" xml:lang="ar" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="apple-touch-icon" type="assets/image/png" href="assets/img/masjid.ico" />
-<meta name="apple-mobile-web-app-title" content="prayer time">
-
-<link rel="shortcut icon" type="image/x-icon" href="assets/img/masjid.ico" />
-
-
-
-
-  <title>Prayer salat times | مواقيت الصلاة لكل دول العالم</title>
-  <link rel="stylesheet" href="assets/css/fonts/font-awesome.min.css">	
-
-  
-  <link rel='stylesheet' href='assets/css/bootstrap-arabic.min.css'>
-  <link rel="stylesheet" href="assets/css/style.css">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Harmattan&display=swap');
-body { direction:rtl; font-family: 'Harmattan', sans-serif;}
-
-.header { 
-	text-align: center; 
-  padding-top: 25px;
-  padding-bottom: 5px;
-}
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
-}
-</style>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/light-theme.css" rel="stylesheet" media="(prefers-color-scheme: light)" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/dark-theme.css" rel="stylesheet" media="(prefers-color-scheme: dark)" />
-
-<script>
-        // Fall back if the browser doesn't support prefers-color-scheme
-        if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
-            // Hide content until CSS loads to prevent show unstyled code.
-            document.documentElement.style.display = 'none';
-
-            // Insert stylesheet with onload event to show page content.
-            document.head.insertAdjacentHTML(
-                'beforeend',
-                '<link href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/dark-theme.css" rel="stylesheet" onload="document.documentElement.style.display=\'\'" />'
-            );
-        }
+    <meta name="description" content="مواقيت الصلاة في كل دول العالم بالاعتماد على خاصية ال GPS 🌇❤️">
+    <meta name="keywords" content="prayer, times, مواقيت, الصلات">
+    <meta name="author" content="HeNy007">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" type="assets/image/png" href="assets/img/masjid.ico" />
+    <meta name="apple-mobile-web-app-title" content="prayer time">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/masjid.ico" />
+    <title>Prayer times | مواقيت الصلاة</title>
+    <link rel="stylesheet" href="assets/css/fonts/font-awesome.min.css">
+    <link rel='stylesheet' href='assets/css/bootstrap-arabic.min.css'>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Harmattan&display=swap');
+      body { direction:rtl; font-family: 'Harmattan', sans-serif;}
+      .header { 
+      text-align: center; 
+      padding-top: 25px;
+      padding-bottom: 5px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/light-theme.css" rel="stylesheet" media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/dark-theme.css" rel="stylesheet" media="(prefers-color-scheme: dark)" />
+    <script>
+      // Fall back if the browser doesn't support prefers-color-scheme
+      if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+          // Hide content until CSS loads to prevent show unstyled code.
+          document.documentElement.style.display = 'none';
+      
+          // Insert stylesheet with onload event to show page content.
+          document.head.insertAdjacentHTML(
+              'beforeend',
+              '<link href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/dark-theme.css" rel="stylesheet" onload="document.documentElement.style.display=\'\'" />'
+          );
+      }
     </script>
-
-</head>
-
-<body dir="rtl">
-<div class="container">
-
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
-<div id="notification_panel" class="alert alert-warning alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <p id="notification_message"></p>
- 
-</div>				
-</div>		  
-</div>
-
-<div class="row">
-  <div class="col-md-12">
-  
-    <div class="row">
-      <div class="col-md-8">
-	<div class="page-header">
- <img alt="Brand" src="assets/img/100png.png"><h1>مواقيت الصلاة حسب موقعك</h1>
-</div>
-
-<div class="page-header">
-<p id="datemoment"></p>				
-</div>
- <div class="panel panel-success">
- 
-<div class="panel-heading">الصلاه القادمه (<span id="nextprayer"></span>) ستبدا بعد: 
-	 <span id="hours"></span>ساعة
-  <span id="minutes"></span>دقيقه
-  <span id="seconds"></span>ثانية
-  </div>  
-  <div class="panel-body">
-
-	 
-	<div id="table"></div>
-	
-	
-	  </div>
-         </div>
-
+  </head>
+  <body dir="rtl">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+          <div id="notification_panel" class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <p id="notification_message"></p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-	  <div class="panel panel-success">
-  <div class="panel-heading"><strong><i class="glyphicon glyphicon-cog"></i> اعدادت مواقيت الصلاه</strong>    </div>
-  <div class="panel-body">
-	  
-	  <form class="form" action="javascript:update();" role="form">
- 				<div class="form-group">
-
-	 <label>خط العرض: </label><input type="text" class="form-control input-lg" value="" id="latitude" size="2" onchange="updateprayer();" />&nbsp;	</div>
-					<div class="form-group">
-
-	 <label>خط الطول: </label><input type="text" class="form-control input-lg" value="" id="longitude" size="2" onchange="updateprayer();" />&nbsp;	</div>
-					<div class="form-group">
-
-	 <label>فرق الزمن: </label>	 
-	  <select  class="form-control input-lg" style="font-size: 12px;" name="timezone" id="timezone" onchange="updateprayer()">
-	  		<option value="auto" selected="selected">Auto</option>
-              <option value="0">0 </option>
-              <option value="1">+1 </option>
-              <option value="-1">-1 </option>
-              <option value="2">+2 </option>
-              <option value="-2">-2 </option>
-              <option value="3">+3 </option>
-              <option value="-3">-3 </option>
-              <option value="4">+4 </option>
-              <option value="-4">-4 </option>
-              <option value="5">+5 </option>
-              <option value="-5">-5 </option>
-              <option value="6">+6 </option>
-              <option value="-6">-6 </option>
-              <option value="7">+7 </option>
-              <option value="-7">-7 </option>
-              <option value="8">+8 </option>
-              <option value="-8">-8 </option>
-              <option value="9">+9 </option>
-              <option value="-9">-9 </option>
-              <option value="10">+10 </option>
-              <option value="-10">-10 </option>
-              <option value="11">+11 </option>
-              <option value="-11">-11 </option>
-              <option value="12">+12 </option>
-              <option value="-12">-12 </option>
-              </select>
-	 &nbsp;	</div>
-					<div class="form-group">
-
-	 <label>التوقيت الصيفي : </label>
-	<select id="dst" size="1" class="form-control input-lg" style="font-size: 12px;" onchange="updateprayer()">
-		<option value="auto" selected="selected">Auto</option>
-		<option value="0">0</option>
-		<option value="1">+1</option>
-    </select>&nbsp;
-	 <label>المذهب: </label>
-	<select id="method" size="1" class="form-control input-lg" style="font-size: 12px;" onchange="updateprayer()">
-		<option value="MWL">رابطة العالم الإسلامي(MWL)</option>
-		<option value="ISNA">الجمعية الإسلامية لأمريكا الشمالية (ISNA)</option>
-		<option value="Egypt" selected="selected">الهيئة العامة المصرية للمساحة</option>
-		<option value="Makkah">مكه - ام القرى</option>
-		<option value="Karachi">كراتشي - جامعة العلوم الإسلامية</option>
-		<option value="Jafari">الجعفري - الاثنى عشريه</option>
-		<option value="Tehran">جامعة طهران - معهد الجيوفيزياء</option>
-	<option value="DZM">وزارة الشؤون الدينية والأوقاف الجزائرية</option>
-	<option value="BH">الخليج 90 دقيقه العشاء ثابت</option>
-	<option value="TR">الشؤون الدينية التركية</option>
-	<option value="RU">روسيا مخصص</option>
-	<option value="FR">اتحاد المنظمات الإسلامية في فرنسا</option>
-	<option value="DE">ألمانيا مخصص</option>
-	<option value="ID">نظام المعلومات الاندونيسيا</option>
-	<option value="Qatar">قطر</option>
-	<option value="KUWAIT">الكويت</option>
-   
-    </select>	
-	</div>
-	<div class="form-group">
-                        <label>المذهب</label>
-                            <select size="1" style="font-size: 12px;" id="jurisdiction" name="jurisdiction" class="form-control input-lg" onchange="updateprayer()">>
-                            <option value="Standard" selected="selected">شافعي، حنبلي، مالكي</option>
-                             <option value="Hanafi">حنفي</option>
-                                           </select>
-       </div>
-     </form>
-	   </div>
-           </div>
-
-	 </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="page-header">
+                <img alt="Brand" src="assets/img/100png.png">
+                <h1>مواقيت الصلاة حسب موقعك</h1>
+              </div>
+              <div class="page-header">
+                <p id="datemoment"></p>
+              </div>
+              <div class="panel panel-success">
+                <div class="panel-heading">الصلاه القادمه (<span id="nextprayer"></span>) ستبدا بعد: 
+                  <span id="hours"></span>ساعة
+                  <span id="minutes"></span>دقيقه
+                  <span id="seconds"></span>ثانية
+                </div>
+                <div class="panel-body">
+                  <div id="table"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="panel panel-success">
+                <div class="panel-heading"><strong><i class="glyphicon glyphicon-cog"></i> اعدادت مواقيت الصلاه</strong>    </div>
+                <div class="panel-body">
+                  <form class="form" action="javascript:update();" role="form">
+                    <div class="form-group">
+                      <label>خط العرض: </label><input type="text" class="form-control input-lg" value="" id="latitude" size="2" onchange="updateprayer();" />&nbsp;	
+                    </div>
+                    <div class="form-group">
+                      <label>خط الطول: </label><input type="text" class="form-control input-lg" value="" id="longitude" size="2" onchange="updateprayer();" />&nbsp;	
+                    </div>
+                    <div class="form-group">
+                      <label>فرق الزمن: </label>	 
+                      <select  class="form-control input-lg" style="font-size: 12px;" name="timezone" id="timezone" onchange="updateprayer()">
+                        <option value="auto" selected="selected">Auto</option>
+                        <option value="0">0 </option>
+                        <option value="1">+1 </option>
+                        <option value="-1">-1 </option>
+                        <option value="2">+2 </option>
+                        <option value="-2">-2 </option>
+                        <option value="3">+3 </option>
+                        <option value="-3">-3 </option>
+                        <option value="4">+4 </option>
+                        <option value="-4">-4 </option>
+                        <option value="5">+5 </option>
+                        <option value="-5">-5 </option>
+                        <option value="6">+6 </option>
+                        <option value="-6">-6 </option>
+                        <option value="7">+7 </option>
+                        <option value="-7">-7 </option>
+                        <option value="8">+8 </option>
+                        <option value="-8">-8 </option>
+                        <option value="9">+9 </option>
+                        <option value="-9">-9 </option>
+                        <option value="10">+10 </option>
+                        <option value="-10">-10 </option>
+                        <option value="11">+11 </option>
+                        <option value="-11">-11 </option>
+                        <option value="12">+12 </option>
+                        <option value="-12">-12 </option>
+                      </select>
+                      &nbsp;	
+                    </div>
+                    <div class="form-group">
+                      <label>التوقيت الصيفي : </label>
+                      <select id="dst" size="1" class="form-control input-lg" style="font-size: 12px;" onchange="updateprayer()">
+                        <option value="auto" selected="selected">Auto</option>
+                        <option value="0">0</option>
+                        <option value="1">+1</option>
+                      </select>
+                      &nbsp;
+                      <label>المذهب: </label>
+                      <select id="method" size="1" class="form-control input-lg" style="font-size: 12px;" onchange="updateprayer()">
+                        <option value="MWL">رابطة العالم الإسلامي(MWL)</option>
+                        <option value="ISNA">الجمعية الإسلامية لأمريكا الشمالية (ISNA)</option>
+                        <option value="Egypt" selected="selected">الهيئة العامة المصرية للمساحة</option>
+                        <option value="Makkah">مكه - ام القرى</option>
+                        <option value="Karachi">كراتشي - جامعة العلوم الإسلامية</option>
+                        <option value="Jafari">الجعفري - الاثنى عشريه</option>
+                        <option value="Tehran">جامعة طهران - معهد الجيوفيزياء</option>
+                        <option value="DZM">وزارة الشؤون الدينية والأوقاف الجزائرية</option>
+                        <option value="BH">الخليج 90 دقيقه العشاء ثابت</option>
+                        <option value="TR">الشؤون الدينية التركية</option>
+                        <option value="RU">روسيا مخصص</option>
+                        <option value="FR">اتحاد المنظمات الإسلامية في فرنسا</option>
+                        <option value="DE">ألمانيا مخصص</option>
+                        <option value="ID">نظام المعلومات الاندونيسيا</option>
+                        <option value="Qatar">قطر</option>
+                        <option value="KUWAIT">الكويت</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>المذهب</label>
+                      <select size="1" style="font-size: 12px;" id="jurisdiction" name="jurisdiction" class="form-control input-lg" onchange="updateprayer()">
+                        >
+                        <option value="Standard" selected="selected">شافعي، حنبلي، مالكي</option>
+                        <option value="Hanafi">حنفي</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-	
-  </div>
-</div>
-
-
-
-
-</div>
-<footer>
-		<div class="container-fluid">
-			<div class="row bg-secondary p-5">
-				<div class="col"><center>
-				<p id="datemoment">	</p><p class="m-0">Developed<span class="text-danger">&hearts;</span> by <a class="text-success" href="https://fb.com/007heny" target="_blank">&hearts; HeNy007 </a></p>
-
-				</div>
-				
-			</div>
-		</div>
-	</footer>
-<script src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap-arabic.min.js"></script>
-<script type="text/javascript" src="assets/js/moment.min.js"></script>
-<script type="text/javascript" src="assets/js/moment-timezone-with-data.min.js"></script>
-<script type="text/javascript" src="assets/js/datediff.min.js"></script>
-
-<script type="text/javascript" src="assets/js/praytimes.js"></script>
-<script type="text/javascript" src="script.js"></script>	
-
-
-</body>
-
+    <footer>
+      <div class="container-fluid">
+        <div class="row bg-secondary p-5">
+          <div class="col">
+            <center>
+            <p id="datemoment">	</p>
+            <p class="m-0">Developed<span class="text-danger">&hearts;</span> by <a class="text-success" href="https://fb.com/007heny" target="_blank">&hearts; HeNy007 </a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-arabic.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment-timezone-with-data.min.js"></script>
+    <script type="text/javascript" src="assets/js/datediff.min.js"></script>
+    <script type="text/javascript" src="assets/js/praytimes.js"></script>
+    <script type="text/javascript" src="script.js"></script>	
+  </body>
 </html>
- 
