@@ -15,12 +15,57 @@
     <link rel="stylesheet" href="assets/css/fonts/font-awesome.min.css">
     <link rel='stylesheet' href='assets/css/bootstrap-arabic.min.css'>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://gist.githubusercontent.com/HeNy007/f6fe7f322dce010b9e8d0eed8bab08db/raw/84aec6742f5d82dd2696e1a306e944e388b2ee26/style.css">
-     <style>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+
+
+<style>
       @import url('https://fonts.googleapis.com/css2?family=Harmattan&display=swap');
       body { direction:rtl; font-family: 'Harmattan', sans-serif;}
-      .header { 
+     body.dark {
+  background-color: #292c35;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background-color:#111;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
+}
+ .header { 
       text-align: center; 
       padding-top: 25px;
       padding-bottom: 5px;
@@ -56,15 +101,14 @@ background-attachment: fixed;
   </script>
   </head>
   <body dir="rtl">
-<div class="container night-mode-available">
-    <div class="night-mode-button">
-      <input type="checkbox" class="checkbox" id="night-mode">
-      <label for="night-mode" class="label">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-        <div class="blob"></div>
-      </label>
-    </div>
+<div>
+    <input type="checkbox" class="checkbox" id="checkbox">
+  <label for="checkbox" class="label">
+    <i class="fas fa-moon"></i>
+    <i class='fas fa-sun'></i>
+    <div class='ball'>
+  </label>
+</div>
 <center>
   <img id="img1" src="https://idata.over-blog.com/3/97/86/24/douaa/5.gif" alt="Nature">
 </center><div class="preloader"></div>
@@ -196,14 +240,12 @@ background-attachment: fixed;
           </div>
         </div>
       </div>
-    </footer>
-<script type="text/javascript">
-    document.querySelector('.checkbox').addEventListener('change',()=>{
-      document.querySelectorAll('.night-mode-available').forEach(ele=>{
-        ele.classList.toggle('night');
-      })
-    });
-  </script>
+    </footer><script>
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', ()=>{
+  document.body.classList.toggle('dark');
+})</script>
     <script src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap-arabic.min.js"></script>
     <script type="text/javascript" src="assets/js/moment.min.js"></script>
