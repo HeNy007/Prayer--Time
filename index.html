@@ -23,6 +23,12 @@
       padding-top: 25px;
       padding-bottom: 5px;
       }
+#img1 {
+        width: 325px;
+        height : 200px;
+        border: 2px solid #3cb371;
+        background-color: #fff;
+      }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/light-theme.css" rel="stylesheet" media="(prefers-color-scheme: light)" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/dark-theme.css" rel="stylesheet" media="(prefers-color-scheme: dark)" />
@@ -39,8 +45,32 @@
           );
       }
     </script>
+<style>
+.preloader {
+position: fixed;
+left: 0;
+top: 0;
+z-index: 999;
+width: 100%;
+height: 100%;
+background: #F8FAF7 url("https://github.com/HeNy007/Prayer--Time/raw/main/assets/img/%D8%A7%D9%84%D9%84%D9%87%D9%85-%D8%B5%D9%84.gif");
+background-repeat: no-repeat;
+background-position: center center;
+background-size: contain;
+background-attachment: fixed;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on("load", function() {
+      $(".preloader").fadeOut("slow")
+    })
+  </script>
   </head>
   <body dir="rtl">
+<center>
+  <img id="img1" src="https://heny007.github.io/Prayer--Time//assets/img/iO86jnU.gif" alt="Nature">
+</center>
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
