@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Harmattan&display=swap');
 /* @import url('https://fonts.googleapis.com/css?family=ABeeZee'); */
 @font-face {
     font-family: DroidArabicKufi;
@@ -21,10 +22,11 @@
          url('fonts/DroidArabicNaskh.woff') format('woff');
 }
 body {
+font-family: 'Harmattan', sans-serif;
+        direction:rtl; 
 	height: 100%;
-	padding-top: 70px;
-	font-family: 'DroidArabicKufi',"Arabic Transparent", Arial, "Comic Sans MS", Courier;
-}
+	padding-top: 40px;
+	}
 
 .btn-secondary.focus,
 .btn-secondary:focus {
