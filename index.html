@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="assets/css/fonts/font-awesome.min.css">
     <link rel='stylesheet' href='assets/css/bootstrap-arabic.min.css'>
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://gist.githubusercontent.com/HeNy007/f6fe7f322dce010b9e8d0eed8bab08db/raw/84aec6742f5d82dd2696e1a306e944e388b2ee26/style.css">
+     <style>
       @import url('https://fonts.googleapis.com/css2?family=Harmattan&display=swap');
       body { direction:rtl; font-family: 'Harmattan', sans-serif;}
       .header { 
@@ -54,6 +56,15 @@ background-attachment: fixed;
   </script>
   </head>
   <body dir="rtl">
+<div class="container night-mode-available">
+    <div class="night-mode-button">
+      <input type="checkbox" class="checkbox" id="night-mode">
+      <label for="night-mode" class="label">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="blob"></div>
+      </label>
+    </div>
 <center>
   <img id="img1" src="https://idata.over-blog.com/3/97/86/24/douaa/5.gif" alt="Nature">
 </center><div class="preloader"></div>
@@ -186,6 +197,13 @@ background-attachment: fixed;
         </div>
       </div>
     </footer>
+<script type="text/javascript">
+    document.querySelector('.checkbox').addEventListener('change',()=>{
+      document.querySelectorAll('.night-mode-available').forEach(ele=>{
+        ele.classList.toggle('night');
+      })
+    });
+  </script>
     <script src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap-arabic.min.js"></script>
     <script type="text/javascript" src="assets/js/moment.min.js"></script>
