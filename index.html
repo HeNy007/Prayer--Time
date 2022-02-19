@@ -47,6 +47,21 @@ body { direction:rtl; font-family: 'Harmattan', sans-serif;}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/light-theme.css" rel="stylesheet" media="(prefers-color-scheme: light)" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/dark-theme.css" rel="stylesheet" media="(prefers-color-scheme: dark)" />
+
+<script>
+        // Fall back if the browser doesn't support prefers-color-scheme
+        if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+            // Hide content until CSS loads to prevent show unstyled code.
+            document.documentElement.style.display = 'none';
+
+            // Insert stylesheet with onload event to show page content.
+            document.head.insertAdjacentHTML(
+                'beforeend',
+                '<link href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/dark-theme.css" rel="stylesheet" onload="document.documentElement.style.display=\'\'" />'
+            );
+        }
+    </script>
+
 </head>
 
 <body dir="rtl">
@@ -205,42 +220,7 @@ body { direction:rtl; font-family: 'Harmattan', sans-serif;}
 <script type="text/javascript" src="assets/js/praytimes.js"></script>
 <script type="text/javascript" src="script.js"></script>	
 
-<script>
-        // Fall back if the browser doesn't support prefers-color-scheme
-        if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
-            // Hide content until CSS loads to prevent show unstyled code.
-            document.documentElement.style.display = 'none';
 
-            // Insert stylesheet with onload event to show page content.
-            document.head.insertAdjacentHTML(
-                'beforeend',
-                '<link href="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/dark-theme.css" rel="stylesheet" onload="document.documentElement.style.display=\'\'" />'
-            );
-        }
-    </script>
-<script src="https://cdn.jsdelivr.net/gh/heny007/Auto-darkmode/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    new Darkmode().showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-const options = {
-  bottom: '64px', // default: '32px'
-  right: 'unset', // default: '32px'
-  left: '32px', // default: 'unset'
-  time: '0.5s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff',  // default: '#fff'
-  buttonColorDark: '#100f2c',  // default: '#100f2c'
-  buttonColorLight: '#fff', // default: '#fff'
-  saveInCookies: false, // default: true,
-  label: '🌓', // default: ''
-  autoMatchOsTheme: true // default: true
-}
-
-const darkmode = new Darkmode(options);
-darkmode.showWidget();
-</script>
 </body>
 
 </html>
